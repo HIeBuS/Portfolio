@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+//text variables
+$basic-font-size: 1rem;
+
+//font families
+$primary-font-family: 'Montserrat', sans-serif;
+$secondary-font-family: 'Open Sans', sans-serif;
+
+@mixin heading_mixin($header-font-style, $header-font-family, $header-color) {
+    font-size: $header-font-style;
+    font-family: $header-font-family;
+    color: $header-color;
+}
+
+@mixin button_mixin($button-font-size,$button-background-color,$button-text-color) {
+    font-size: $button-font-size;
+    background-color: $button-background-color;
+    color: $button-text-color;
+    @include size();
+    @include border();
+}

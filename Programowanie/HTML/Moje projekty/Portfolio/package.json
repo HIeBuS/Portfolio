@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "I would like to introduce You my portfolio website, which contains some of my projects and shows my frontend development skills",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HIeBuS/Portfolio.git"
+  },
+  "keywords": [
+    "frontend",
+    "portfolio",
+    "website",
+    "IT",
+    "programming",
+    "development",
+    "skills",
+    "abilities",
+    "learning",
+    "work"
+  ],
+  "author": "Jakub Hlebowicz",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
