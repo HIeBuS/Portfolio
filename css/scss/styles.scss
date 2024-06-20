@@ -1,16 +1,214 @@
+//whole page
 body, html {
-    background-image: url('../../img/bg/day.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+  background-image: url('../../img/bg/day.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  overflow: hidden;
 }
 
+//introduction (title, header)
 .introduction {
-    h1 {
-        @include heading_mixin(5rem,$primary-font-family,$basic-text-color);
+  height: 100%;
+  width: 46vw;
+  position: relative;
+  margin-top: 4vh;
+  margin-left: 45vw;
+  h1 {
+      @include heading_mixin(5rem, $primary-font-family, $basic-text-color);
+      text-shadow: 3px 3px 0 $primary-accent-color;
+  }
+
+  h3 {
+      @include heading_mixin(3rem, $primary-font-family, $primary-accent-color);
+      text-shadow: 
+          1px 1px 5px $third-accent-color,
+          1px -1px 5px $third-accent-color,
+          -1px -1px 5px $third-accent-color,
+          -1px 1px 5px $third-accent-color;
+  }
+}
+
+//navbar
+header {
+  width: auto;
+  height: 11vh;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 0;
+
+  nav {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+
+    #entireList {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    }
+    
+    #entireList.show {
+      opacity: 1;
+      visibility: visible;
     }
 
-    h3 {
-        @include heading_mixin(3rem,$primary-font-family,$primary-accent-color);
+    ul {
+      list-style: none;
+      padding: 10px 0 10px 20px;
+      margin: -10px 0 -10px -20px;
+      display: flex;
+
+      li.what-I-do {
+        position: relative;
+
+        ul.nested-what-I-do {
+          opacity: 0;
+          visibility: hidden;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+          line-height: 1;
+
+          li {
+            font-size: 0.7em;
+            color: $basic-text-color;
+            padding: 0.5em 1em;
+            white-space: nowrap;
+
+            &:hover {
+              color: $secondary-accent-color;
+              transition: all 0.2s ease-in-out;
+              text-shadow: 
+              0.5px 0.5px 1px $basic-text-color,
+              0.5px -0.5px 1px $basic-text-color,
+              -0.5px -0.5px 1px $basic-text-color,
+              -0.5px 0.5px 1px $basic-text-color;
+            }
+          }
+        }
+
+        &:hover ul.nested-what-I-do {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      li {
+        padding: 0 1vw;
+        a {
+          color: $basic-text-color;
+          text-decoration: none;
+          transition: all 0.325s ease-in-out;
+
+          &:hover {
+            color: $secondary-accent-color;
+            text-shadow: 
+              0.5px 0.5px 1px $basic-text-color,
+              0.5px -0.5px 1px $basic-text-color,
+              -0.5px -0.5px 1px $basic-text-color,
+              -0.5px 0.5px 1px $basic-text-color;
+          }
+        }
+      }
     }
+  }
+
+  .icons-switch {
+    display: flex;
+    align-items: center;
+
+    .fa-sun, .fa-moon {
+      margin: 0 5px;
+    }
+  }
+}
+
+//navbar switch (hidden navbar)
+.navbar-switch {
+  position: relative;
+  width: 35px;
+  height: 32px;
+  margin: 0 0.5vw 0 1vw;
+  text-shadow: 
+    0.5px 0.5px 0 $basic-text-color,
+    0.5px -0.5px 0 $basic-text-color,
+    -0.5px -0.5px 0 $basic-text-color,
+    -0.5px 0.5px 0 $basic-text-color;
+
+  #navbar-switch-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  i.fa-bars {
+    color: $basic-text-color;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      color: lighten($basic-text-color,15%);
+      transition: all 0.2s ease-in-out;
+    }
+
+  }
+}
+
+//theme switch (day/night)
+.switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  margin: 0 5px;
+
+  input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+
+  .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $basic-text-color;
+      transition: .4s;
+
+      &.round {
+          border-radius: 34px;
+          &:before {
+              border-radius: 50%;
+          }
+      }
+
+      &:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: .4s;
+      }
+  }
+
+  input:checked + .slider:before {
+      transform: translateX(26px);
+  }
 }

@@ -59,15 +59,172 @@ body, html {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  overflow: hidden;
 }
 
+.introduction {
+  height: 100%;
+  width: 46vw;
+  position: relative;
+  margin-top: 4vh;
+  margin-left: 45vw;
+}
 .introduction h1 {
   font-size: 5rem;
   font-family: "Montserrat", sans-serif;
-  color: #000;
+  color: #5e5956;
+  text-shadow: 3px 3px 0 #ccae70;
 }
 .introduction h3 {
   font-size: 3rem;
   font-family: "Montserrat", sans-serif;
-  color: #000;
+  color: #ccae70;
+  text-shadow: 1px 1px 5px #153f66, 1px -1px 5px #153f66, -1px -1px 5px #153f66, -1px 1px 5px #153f66;
+}
+
+header {
+  width: auto;
+  height: 11vh;
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 0;
+}
+header nav {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+}
+header nav #entireList {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+header nav #entireList.show {
+  opacity: 1;
+  visibility: visible;
+}
+header nav ul {
+  list-style: none;
+  padding: 10px 0 10px 20px;
+  margin: -10px 0 -10px -20px;
+  display: flex;
+}
+header nav ul li.what-I-do {
+  position: relative;
+}
+header nav ul li.what-I-do ul.nested-what-I-do {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  line-height: 1;
+}
+header nav ul li.what-I-do ul.nested-what-I-do li {
+  font-size: 0.7em;
+  color: #5e5956;
+  padding: 0.5em 1em;
+  white-space: nowrap;
+}
+header nav ul li.what-I-do ul.nested-what-I-do li:hover {
+  color: #db8b4d;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 0.5px 0.5px 1px #5e5956, 0.5px -0.5px 1px #5e5956, -0.5px -0.5px 1px #5e5956, -0.5px 0.5px 1px #5e5956;
+}
+header nav ul li.what-I-do:hover ul.nested-what-I-do {
+  opacity: 1;
+  visibility: visible;
+}
+header nav ul li {
+  padding: 0 1vw;
+}
+header nav ul li a {
+  color: #5e5956;
+  text-decoration: none;
+  transition: all 0.325s ease-in-out;
+}
+header nav ul li a:hover {
+  color: #db8b4d;
+  text-shadow: 0.5px 0.5px 1px #5e5956, 0.5px -0.5px 1px #5e5956, -0.5px -0.5px 1px #5e5956, -0.5px 0.5px 1px #5e5956;
+}
+header .icons-switch {
+  display: flex;
+  align-items: center;
+}
+header .icons-switch .fa-sun, header .icons-switch .fa-moon {
+  margin: 0 5px;
+}
+
+.navbar-switch {
+  position: relative;
+  width: 35px;
+  height: 32px;
+  margin: 0 0.5vw 0 1vw;
+  text-shadow: 0.5px 0.5px 0 #5e5956, 0.5px -0.5px 0 #5e5956, -0.5px -0.5px 0 #5e5956, -0.5px 0.5px 0 #5e5956;
+}
+.navbar-switch #navbar-switch-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.navbar-switch i.fa-bars {
+  color: #5e5956;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.navbar-switch i.fa-bars:hover {
+  color: #867f7b;
+  transition: all 0.2s ease-in-out;
+}
+
+.switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  margin: 0 5px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #5e5956;
+  transition: 0.4s;
+}
+.switch .slider.round {
+  border-radius: 34px;
+}
+.switch .slider.round:before {
+  border-radius: 50%;
+}
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
 }/*# sourceMappingURL=main.css.map */

@@ -12,13 +12,49 @@
     <link rel="stylesheet" href="../css/scss/main.css" type="text/css">
     <!-- Bootstrap connection -->
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
+        <header>
+            <nav>
+                <label class="navbar-switch">
+                    <i class="fa-solid fa-bars"></i>
+                    <input type="checkbox" id="navbar-switch-checkbox">
+                </label>
+                <ul id="entireList">
+                    <li class="what-I-do">
+                        <a href="#">What I do <sub><i class="fa-solid fa-arrow-down"></i></sub></a>
+                        <ul class="nested-what-I-do">
+                            <hr>
+                            <li>Web development</li>
+                            <li>UI Design</li>
+                            <li>Content writing</li>
+                            <hr>
+                        </ul>
+                    </li>
+                    <li><a href="#">Featured projects</a></li>
+                    <li><a href="#">About me</a></li>
+                    <li><a href="#">Technical Skills</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="icons-switch">
+                <i class="fa-solid fa-sun" id="sun-icon" style="color: #5e5956;"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fa-solid fa-moon" id="moon-icon" style="color: #5e5956;"></i>
+            </div>
+        </header>
         <div class="introduction">
             <h1>Jakub Hlebowicz</h1>
             <h3>Frontend Developer</h3>
         </div>
     </div>
+    <!-- Script.js -->
+    <script src="../js/script.js" defer></script>
 </body> 
 </html>
