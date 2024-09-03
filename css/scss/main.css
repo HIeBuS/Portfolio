@@ -59,7 +59,9 @@ body, html {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
 }
 
 .introduction {
@@ -67,19 +69,21 @@ body, html {
   width: 46vw;
   position: relative;
   margin-top: 4vh;
-  margin-left: 45vw;
+  margin-left: 44vw;
 }
 .introduction h1 {
   font-size: 5rem;
   font-family: "Montserrat", sans-serif;
   color: #5e5956;
   text-shadow: 3px 3px 0 #ccae70;
+  z-index: 5;
 }
 .introduction h3 {
   font-size: 3rem;
   font-family: "Montserrat", sans-serif;
   color: #ccae70;
   text-shadow: 1px 1px 5px #153f66, 1px -1px 5px #153f66, -1px -1px 5px #153f66, -1px 1px 5px #153f66;
+  z-index: 5;
 }
 
 header {
@@ -93,12 +97,15 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2vh 0;
+  z-index: 100;
 }
 header nav {
+  position: fixed;
   font-weight: 700;
   display: flex;
   align-items: center;
   font-size: 1.1em;
+  z-index: 100;
 }
 header nav #entireList {
   opacity: 0;
@@ -157,8 +164,11 @@ header nav ul li a:hover {
   text-shadow: 0.5px 0.5px 1px #5e5956, 0.5px -0.5px 1px #5e5956, -0.5px -0.5px 1px #5e5956, -0.5px 0.5px 1px #5e5956;
 }
 header .icons-switch {
+  position: fixed;
+  right: 1vw;
   display: flex;
   align-items: center;
+  z-index: 100;
 }
 header .icons-switch .fa-sun, header .icons-switch .fa-moon {
   margin: 0 5px;
@@ -170,6 +180,7 @@ header .icons-switch .fa-sun, header .icons-switch .fa-moon {
   height: 32px;
   margin: 0 0.5vw 0 1vw;
   text-shadow: 0.5px 0.5px 0 #5e5956, 0.5px -0.5px 0 #5e5956, -0.5px -0.5px 0 #5e5956, -0.5px 0.5px 0 #5e5956;
+  z-index: 100;
 }
 .navbar-switch #navbar-switch-checkbox {
   opacity: 0;
@@ -193,6 +204,7 @@ header .icons-switch .fa-sun, header .icons-switch .fa-moon {
   width: 60px;
   height: 34px;
   margin: 0 5px;
+  z-index: 100;
 }
 .switch input {
   opacity: 0;
@@ -227,4 +239,433 @@ header .icons-switch .fa-sun, header .icons-switch .fa-moon {
 }
 .switch input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+#sun-icon, #night-icon {
+  z-index: 100;
+}
+
+.social-media {
+  position: fixed;
+  margin-top: -10vh;
+  width: 60px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+.social-media .social-square {
+  width: 60px;
+  height: 60px;
+  border-radius: 360px;
+  transition: background-color 0.3s, filter 0.3s;
+  color: #EEE;
+  font-size: 2.2em;
+  text-align: center;
+}
+.social-media .social-square a {
+  text-decoration: none;
+}
+.social-media .fb-tile {
+  background-color: #4267B2;
+  border: 1px solid #111;
+}
+.social-media .fb-tile:hover {
+  background-color: #6283c5;
+}
+.social-media .ig-tile {
+  background: rgb(64, 93, 230);
+  background: linear-gradient(30deg, rgb(64, 93, 230) 0%, rgb(131, 58, 180) 21%, rgb(225, 48, 108) 46%, rgb(245, 96, 64) 74%, rgb(255, 220, 128) 100%);
+  border: 1px solid #111;
+}
+.social-media .ig-tile:hover {
+  filter: brightness(1.3);
+}
+.social-media .github-tile {
+  background-color: #24292e;
+  border: 1px solid #111;
+}
+.social-media .github-tile:hover {
+  background-color: #3a434b;
+}
+.social-media .linkedin-tile {
+  background-color: #0e76a8;
+  border: 1px solid #111;
+}
+.social-media .linkedin-tile:hover {
+  background-color: #1297d7;
+}
+.social-media .contact-data-tile {
+  background: rgb(62, 101, 207);
+  background: linear-gradient(90deg, rgb(62, 101, 207) 0%, rgb(199, 22, 16) 21%, rgb(242, 166, 12) 46%, rgb(59, 96, 196) 74%, rgb(8, 133, 27) 100%);
+  border: 1px solid #111;
+}
+.social-media .contact-data-tile:hover {
+  filter: brightness(1.3);
+}
+
+.social-media-contact-box {
+  position: fixed;
+  width: 15vw;
+  height: 16vh;
+  top: 68vh;
+  left: 2vw;
+  padding: 1vh 1vw;
+  color: #EEE;
+  border: 2px dashed #5e5956;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  z-index: 3;
+}
+.social-media-contact-box h4 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif;
+  color: #ccae70;
+  text-shadow: 1.5px 1.5px #5e5956;
+}
+.social-media-contact-box .mail {
+  margin-top: -4px;
+}
+
+.social-media-contact-box.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-up-button {
+  width: 60px;
+  height: 56px;
+  background-color: #db8b4d;
+  border: 2px outset #5e5956;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 0 #111, 0.5px -0.5px 0 #111, -0.5px -0.5px 0 #111, -0.5px 0.5px 0 #111;
+  transition: background-color 0.3s ease-in-out;
+  color: #5e5956;
+  z-index: 100;
+  position: fixed;
+  bottom: 1.5vh;
+  right: 1vw;
+}
+.scroll-up-button .fa-v {
+  margin-top: 1.5vh;
+}
+.scroll-up-button:hover {
+  background-color: #df9962;
+}
+.scroll-up-button:active {
+  background-color: #d77d38;
+  transition: none;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #db8b4d;
+  border-top: 0.5px solid #5e5956;
+  z-index: 100;
+}
+
+.case-study-content, .case-study-bg, .contact-bg, .about-me-bg, .contact-content {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 70vw;
+  height: 80vh;
+  margin-top: 15vh;
+  margin-left: 37vh;
+  text-align: center;
+  border: 4px #5e5956;
+  border-style: ridge double double ridge;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+.case-study-content h2, .case-study-bg h2, .contact-bg h2, .about-me-bg h2, .contact-content h2 {
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #5e5956;
+  text-shadow: 1.5px 1.5px 0 #ccae70, 1.5px -1.5px 0 #ccae70, -1.5px -1.5px 0 #ccae70, -1.5px 1.5px 0 #ccae70;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+.case-study-content .cs-tile, .case-study-bg .cs-tile, .contact-bg .cs-tile, .about-me-bg .cs-tile, .contact-content .cs-tile {
+  width: 20vw !important;
+  height: 26vh;
+  border: 2px dashed #5e5956;
+  margin-top: 1vh;
+  margin-bottom: 4vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-study-bg, .contact-bg, .about-me-bg {
+  filter: blur(8px);
+  opacity: 0.5;
+  background-image: url("../../img/bg/gray-bg.png");
+  position: absolute;
+  border: none;
+  width: 70vw;
+  height: 78vh;
+  padding: 0 1vw;
+}
+
+.contact-bg, .contact-content {
+  margin-bottom: 15vh;
+  height: 40vh;
+}
+.contact-bg h2, .contact-content h2 {
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #ccae70;
+  text-shadow: 1.5px 1.5px 3px #153f66, 1.5px -1.5px 3px #153f66, -1.5px -1.5px 3px #153f66, -1.5px 1.5px 3px #153f66;
+}
+.contact-bg .contact-socials, .contact-content .contact-socials {
+  position: fixed;
+  transform: scale(0.7);
+  top: 55px;
+  right: 15px;
+}
+
+.contact-form {
+  font-weight: bold;
+  color: #153f66;
+}
+.contact-form #email_text, .contact-form #message_text {
+  text-shadow: 0.5px 0.5px 3px #ccae70, 0.5px 0.5px 3px #ccae70, 0.5px 0.5px 2px #ccae70, 0.5px 0.5px 3px #ccae70;
+}
+.contact-form #message_text {
+  writing-mode: vertical-rl;
+  margin-top: 16px;
+}
+.contact-form #email, .contact-form #message {
+  background-image: url("../../img/bg/gray-bg.png");
+  border: 2px inset;
+  border-radius: 10px;
+}
+.contact-form input[type=submit] {
+  color: #153f66;
+  background-color: #ccae70;
+  border: 2px solid #153f66;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.contact-form textarea {
+  resize: none;
+}
+
+.about-me-wrapper {
+  position: fixed;
+  top: 16vh;
+  right: -41vw;
+  width: 45vw;
+  height: 36vh;
+  z-index: 99;
+  transition: right 0.5s ease-in-out;
+}
+.about-me-wrapper:hover {
+  right: 0;
+}
+.about-me-wrapper .about-me-bg {
+  position: absolute;
+  right: 0vw;
+  width: 45vw;
+  height: 35vh;
+  z-index: 1;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.about-me-wrapper .about-me-content {
+  position: absolute;
+  top: 15vh;
+  width: 45vw;
+  height: 36vh;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  border: 2px inset #111;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  text-align: center;
+  transition: right 0.5s ease-in-out;
+}
+.about-me-wrapper .about-me-content .about-me-title {
+  writing-mode: vertical-rl;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #5e5956;
+  text-shadow: 1px 1px 3px #db8b4d, 1px -1px 3px #db8b4d, -1px -1px 3px #db8b4d, -1px 1px 3px #db8b4d;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 12px;
+}
+.about-me-wrapper .about-me-content img {
+  width: 110px;
+  height: 140px;
+  float: left;
+  margin-right: 1rem;
+  border-radius: 50%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 30px;
+  border: 6px solid #111;
+  outline: 2px solid #ccae70;
+}
+.about-me-wrapper .about-me-content p {
+  text-align: justify;
+  -moz-text-align-last: center;
+       text-align-last: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 20px;
+}
+
+.technical-skills-content {
+  position: fixed;
+  bottom: 90px;
+  left: -50px;
+  width: 20vw;
+  height: 6vh;
+  text-align: center;
+  z-index: 2;
+  border: 2px #5e5956;
+  border-style: ridge double double ridge;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  transform: rotateZ(-45deg);
+}
+.technical-skills-content h4 {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #5e5956;
+  text-shadow: 0.5px 0.5px 2px #db8b4d, 0.5px -0.5px 2px #db8b4d, -0.5px -0.5px 2px #db8b4d, -0.5px 0.5px 2px #db8b4d;
+  margin-top: 5px;
+}
+
+.technical-skills-bg {
+  filter: blur(8px);
+  opacity: 0.5;
+  background-image: url("../../img/bg/gray-bg.png");
+  position: fixed;
+  bottom: 90px;
+  left: -50px;
+  width: 20vw;
+  height: 6vh;
+  transform: rotateZ(-45deg);
+  /* Hover effect that triggers the color change in expanded sections */
+}
+.technical-skills-bg:hover ~ .technical-skills-expanded-bg, .technical-skills-bg:hover ~ .technical-skills-expanded-content {
+  background-color: #ccc; /* Replace #ccc with the desired hover color */
+}
+
+.technical-skills-expanded-bg {
+  filter: blur(8px);
+  opacity: 0.5;
+  background-image: url("../../img/bg/gray-bg.png");
+  position: fixed;
+  bottom: 0px;
+  left: 65px;
+  width: 21vw;
+  height: 29vh;
+  transform: skewX(-45deg);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  /* Additional color change when the hover is triggered */
+}
+.technical-skills-expanded-bg.show {
+  background-color: #ccc; /* Replace with the desired expanded section color */
+}
+
+.technical-skills-expanded-content {
+  padding: 5px 0;
+  z-index: 2;
+  border: 2px #5e5956;
+  border-style: ridge double double ridge;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  position: fixed;
+  bottom: 0px;
+  left: 125px;
+  width: 17vw;
+  height: 29vh;
+  transform: skewX(-45deg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  /* Additional color change when the hover is triggered */
+}
+.technical-skills-expanded-content.show {
+  background-color: #ccc; /* Replace with the desired expanded section color */
+}
+.technical-skills-expanded-content p {
+  transform: skewX(45deg);
+  margin-left: 30px;
+  line-height: 0;
+}
+.technical-skills-expanded-content p .rockets-icons {
+  margin-left: 10px;
+}
+.technical-skills-expanded-content p i.fa-rocket {
+  margin: 0 5px;
+  color: #111;
+  text-shadow: 0.5px 0.5px 1px #db8b4d, 0.5px 0.5px 1px #db8b4d, 0.5px 0.5px 1px #db8b4d, 0.5px 0.5px 1px #db8b4d;
+}
+.technical-skills-expanded-content p:first-child {
+  margin-top: 5px;
+}
+
+.technical-skills-expanded-bg.show,
+.technical-skills-expanded-content.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.what-I-do-bg {
+  filter: blur(8px);
+  opacity: 0.5;
+  background-image: url("../../img/bg/brown-bg.png");
+  position: fixed;
+  left: 16.5vw;
+  top: 13vh;
+  width: 77vw;
+  height: 68vh;
+  padding: 0 1vw;
+}
+
+.what-I-do-content {
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  left: 16.5vw;
+  top: 13vh;
+  width: 77vw;
+  height: 70vh;
+  text-align: center;
+  border: 4px #5e5956;
+  border-style: ridge double double ridge;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+.what-I-do-content h3 {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #5e5956;
+  text-shadow: 1.5px 1.5px 0 #ccae70, 1.5px -1.5px 0 #ccae70, -1.5px -1.5px 0 #ccae70, -1.5px 1.5px 0 #ccae70;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }/*# sourceMappingURL=main.css.map */
