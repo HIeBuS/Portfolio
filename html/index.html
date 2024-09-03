@@ -16,16 +16,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Entire content -->
     <div class="container-fluid">
-        <header>
+        <!-- Navigation bar at the top -->
+        <header id="top-of-website">
             <nav>
+                <!-- Menu button -->
                 <label class="navbar-switch">
                     <i class="fa-solid fa-bars"></i>
                     <input type="checkbox" id="navbar-switch-checkbox">
                 </label>
+                <!-- Menu List -->
                 <ul id="entireList">
                     <li class="what-I-do">
                         <a href="#">What I do <sub><i class="fa-solid fa-arrow-down"></i></sub></a>
+                        <!-- nested list -->
                         <ul class="nested-what-I-do">
                             <hr>
                             <li>Web development</li>
@@ -40,6 +45,7 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+            <!-- day/night mode switch in navigation bar -->
             <div class="icons-switch">
                 <i class="fa-solid fa-sun" id="sun-icon" style="color: #5e5956;"></i>
                 <label class="switch">
@@ -49,10 +55,119 @@
                 <i class="fa-solid fa-moon" id="moon-icon" style="color: #5e5956;"></i>
             </div>
         </header>
+        <!-- Main writings -->
         <div class="introduction">
             <h1>Jakub Hlebowicz</h1>
             <h3>Frontend Developer</h3>
         </div>
+        <!-- Social icons at the left side -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/jakub.hlebowicz.9" target="_blank"><div class="social-square fb-tile"><i class="fa-brands fa-facebook-f"></i></div></a>
+            <a href="https://www.instagram.com/__hlebus__/" target="_blank"><div class="social-square ig-tile"><i class="fa-brands fa-instagram"></i></div></a>
+            <a href="https://github.com/HIeBuS" target="_blank"><div class="social-square github-tile"><i class="fa-brands fa-github"></i></div></a>
+            <a href="#"><div class="social-square linkedin-tile" target="_blank"><i class="fa-brands fa-linkedin-in"></i></div></a>
+            <a href="mailto:hlebowiczjakub@gmail.com"><div class="social-square contact-data-tile" title="send mail"><i class="fa-solid fa-phone"></i></div></a>
+        </div>
+        <div class="social-media-contact-box">
+            <h4>Contact</h4>
+            <p class="phone">+48 667 453 023</p>
+            <p class="mail">hlebowiczjakub@gmail.com</p>
+        </div>
+        <!-- Case study -->
+        <div class="case-study-bg"></div>
+        <div class="case-study-content">
+            <h2>Case study</h2>
+            <div class="row">
+                <div class="cs-tile cs-tile1 col-lg-4">tile 1</div>
+                <div class="cs-tile cs-tile2 col-lg-4">tile 2</div>
+                <div class="cs-tile cs-tile3 col-lg-4">tile 3</div>
+            </div>
+            <div class="row">
+                <div class="cs-tile cs-tile4 col-lg-4">tile 4</div>
+                <div class="cs-tile cs-tile5 col-lg-4">tile 5</div>
+                <div class="cs-tile cs-tile6 col-lg-4">tile 6</div>
+            </div>
+        </div>
+        <!-- Contact -->
+        <div class="contact-bg"></div>
+        <div class="contact-content">
+            <h2>Contact</h2>
+            <form class="contact-form" action="mailto:hlebowiczjakub@gmail.com" method="post">
+                <label for="email" id="email_text">Your Email &rarr;</label>    
+                <input type="email" id="email" name="email" required><br>
+                <label for="message" id="message_text">Message &uarr;</label>
+                <textarea id="message" name="message" rows="3" cols="70" required></textarea><br>
+                <input type="submit" value="Send Email">
+            </form> 
+            <div class="row">
+                <div class="col-lg-10"></div>
+                <div class="col-lg-2">
+                    <div class="social-media contact-socials">
+                        <a href="https://www.facebook.com/jakub.hlebowicz.9" target="_blank"><div class="social-square fb-tile"><i class="fa-brands fa-facebook-f"></i></div></a>
+                        <a href="https://www.instagram.com/__hlebus__/" target="_blank"><div class="social-square ig-tile"><i class="fa-brands fa-instagram"></i></div></a>
+                        <a href="https://github.com/HIeBuS" target="_blank"><div class="social-square github-tile"><i class="fa-brands fa-github"></i></div></a>
+                        <a href="#"><div class="social-square linkedin-tile" target="_blank"><i class="fa-brands fa-linkedin-in"></i></div></a>
+                        <a href="mailto:hlebowiczjakub@gmail.com"><div class="social-square contact-data-tile" title="send mail"><i class="fa-solid fa-phone"></i></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About me -->
+        <div class="about-me-wrapper">
+            <div class="about-me-bg"></div>
+            <div class="about-me-content">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <h3 class="about-me-title">About me</h3>
+                    </div>
+                    <div class="col-lg-3">
+                        <img src="../img/profile-photo.png">
+                    </div>
+                    <div class="col-lg-8">
+                        <p>Hi, I'm Jakub, I hope I can be called a junior frontend developer, taking his first steps at websites market and gaining some experience. I graduated Janusz Groszkowski Elecrical School Complex in Białystok on the profile of programmer technician. From an early age I have enjoyed art lessons and that's how my passion to create user interfaces' desing created. I also got talent to writing, so if You need a person, who can complete your website content, it might be me. Out of work I am passionated athlete, I keen on football and running, and musician. I bought my first guitar not long ago. I hope we can find a common way to cooperate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Technical skills -->
+        <div class="technical-skills-bg"></div>
+        <div class="technical-skills-content">
+            <h4>Technical Skills</h4>
+        </div>
+        <div class="technical-skills-expanded-bg"></div>
+        <div class="technical-skills-expanded-content">
+            <p>HTML <span class="rockets-icons"><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i> </p></span>
+            <p>CSS <span class="rockets-icons"><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i></span></p>
+            <p>JS <span class="rockets-icons"><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i></span></p>
+            <p>Bootstrap <span class="rockets-icons"><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i></span></p>
+            <p>Sass & Less <span class="rockets-icons"><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i></span></p>
+            <p>Wordpress <span class="rockets-icons"><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i><i class="fa-solid fa-rocket"></i></span></p>
+            <p>Angular <span class="rockets-icons"><i class="fa-solid fa-rocket"></i></p>
+        </div>
+        <!-- What I do -->
+         <div class="what-I-do-bg"></div>
+        <div class="what-I-do-content">
+            <div class="UI-Design">
+                <h3>UI Design</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat velit vitae, dignissimos saepe id asperiores natus alias, consequatur nam nisi laborum quam, sit veniam. Voluptatem animi nemo repudiandae maxime pariatur.
+                Eligendi, numquam facilis. Eum, ex blanditiis. Qui laudantium delectus fugit nam reiciendis inventore facere asperiores culpa ut sint. Placeat, aut ipsa? Odio vitae fuga id minus delectus alias culpa quidem?</p>
+            </div>
+            <div class="Web-Development">
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat velit vitae, dignissimos saepe id asperiores natus alias, consequatur nam nisi laborum quam, sit veniam. Voluptatem animi nemo repudiandae maxime pariatur.
+                Eligendi, numquam facilis. Eum, ex blanditiis. Qui laudantium delectus fugit nam reiciendis inventore facere asperiores culpa ut sint. Placeat, aut ipsa? Odio vitae fuga id minus delectus alias culpa quidem?</p>
+            </div>
+            <div class="Content-Writing">
+                <h3>Content Writing</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat velit vitae, dignissimos saepe id asperiores natus alias, consequatur nam nisi laborum quam, sit veniam. Voluptatem animi nemo repudiandae maxime pariatur.
+                Eligendi, numquam facilis. Eum, ex blanditiis. Qui laudantium delectus fugit nam reiciendis inventore facere asperiores culpa ut sint. Placeat, aut ipsa? Odio vitae fuga id minus delectus alias culpa quidem?</p>
+            </div>
+        </div>
+
+        <!-- button for scroll up at the right bottom -->
+        <a href="#top-of-website"><div class="scroll-up-button"><i class="fa-solid fa-v fa-flip-vertical"></i></div></a>
+        <!-- bar showing level of scrolling -->
+        <div id="bottom-bar" class="bottom-bar"></div>
     </div>
     <!-- Script.js -->
     <script src="../js/script.js" defer></script>
